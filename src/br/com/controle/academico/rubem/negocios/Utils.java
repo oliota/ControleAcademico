@@ -1,5 +1,10 @@
-package br.com.controle.academico.rubem;
+package br.com.controle.academico.rubem.negocios;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -15,4 +20,8 @@ public class Utils {
 		decimalFormat.setMaximumFractionDigits(2);
 		return decimalFormat.format(numero);
 	}
+
+	
+	
+	 
 }

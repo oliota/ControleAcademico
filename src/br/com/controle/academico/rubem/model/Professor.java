@@ -1,22 +1,29 @@
-package br.com.controle.academico.rubem;
+package br.com.controle.academico.rubem.model;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import br.com.controle.academico.rubem.interfaces.Apresentacao;
+import br.com.controle.academico.rubem.negocios.Utils;
 
 public class Professor extends Usuario  implements Apresentacao{
 
 	private String Disciplina;
 	private ArrayList<Aluno> Alunos;
 
-	public Professor() {
-	}
-
-	public Professor(String matricula, String nome, String Disciplina) {
-		super(matricula,nome);
-		setDisciplina(Disciplina);
+	public Professor() { 
 		setAlunos(new ArrayList<Aluno>());
-
 	}
+
+	
+
+	public Professor(String logon,String nome,String disciplina) {
+		super(logon,nome);
+		setDisciplina(disciplina);
+		setAlunos(new ArrayList<Aluno>());
+	}
+
+
 
 	public String getDisciplina() {
 		return Disciplina;
@@ -72,7 +79,7 @@ public class Professor extends Usuario  implements Apresentacao{
 
 	@Override
 	public void ApresentacaoDetalhada() {
-		System.out.println(getNome() + " - " + getMatricula() + " - " + getDisciplina() + " - quantidade de alunos "
+		System.out.println(getNome() + " - " + getIdUsuario() + " - " + getDisciplina() + " - quantidade de alunos "
 				+ getAlunos().size());
 	}
 
