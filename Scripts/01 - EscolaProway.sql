@@ -68,5 +68,24 @@ CREATE TABLE Nota (
  
  
  
+INSERT Perfil (nome) VALUES ('Administrador'); 
+INSERT Perfil (nome) VALUES ('Usuário'); 
+
+
+
+INSERT Disciplina (nome) VALUES ('C# Fundamentos'); 
+INSERT Disciplina (nome) VALUES ('Java Fundamentos'); 
+INSERT Disciplina (nome) VALUES ('Linguagem de programação java'); 
+
+
+select a.idaluno,u.*,p.nome perfil,d.iddisciplina,d.nome disciplina from aluno a
+				inner join usuario u on u.IdUsuario= a.UsuarioId 
+				inner join perfil p on p.IdPerfil= u.PerfilId 
+				inner join disciplina d on d.IdDisciplina = a.DisciplinaId
+
+ 
+ 
+ 
+ 
 
 
